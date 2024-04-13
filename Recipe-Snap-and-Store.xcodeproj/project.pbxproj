@@ -21,6 +21,7 @@
 		F8D2315F2BCB1DA700D3A3E8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F8D2315E2BCB1DA700D3A3E8 /* FirebaseAuth */; };
 		F8D231612BCB1E9D00D3A3E8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D231602BCB1E9D00D3A3E8 /* SignUpView.swift */; };
 		F8D231632BCB1EAF00D3A3E8 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D231622BCB1EAF00D3A3E8 /* LogInView.swift */; };
+		F8D231652BCB238400D3A3E8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D231642BCB238400D3A3E8 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		F8D2315B2BCB1D3E00D3A3E8 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		F8D231602BCB1E9D00D3A3E8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		F8D231622BCB1EAF00D3A3E8 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		F8D231642BCB238400D3A3E8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				F8D2315B2BCB1D3E00D3A3E8 /* AuthenticationService.swift */,
 				F8D231602BCB1E9D00D3A3E8 /* SignUpView.swift */,
 				F8D231622BCB1EAF00D3A3E8 /* LogInView.swift */,
+				F8D231642BCB238400D3A3E8 /* MainView.swift */,
 			);
 			path = "Recipe-Snap-and-Store";
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D231632BCB1EAF00D3A3E8 /* LogInView.swift in Sources */,
+				F8D231652BCB238400D3A3E8 /* MainView.swift in Sources */,
 				F8D231612BCB1E9D00D3A3E8 /* SignUpView.swift in Sources */,
 				F8D2315C2BCB1D3E00D3A3E8 /* AuthenticationService.swift in Sources */,
 				F8AD8B972BCB19CD00AB4BDA /* ContentView.swift in Sources */,

@@ -29,7 +29,7 @@ struct ContentView: View {
                         .background(Color.green)
                         .cornerRadius(10)
                 }
-                .padding()
+                .padding() //test
             }
             .padding()
         }

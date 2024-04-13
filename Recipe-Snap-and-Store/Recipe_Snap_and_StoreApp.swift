@@ -19,16 +19,21 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 }
 
 @main
-struct YourApp: App {
+struct Recipe_Snap_and_StoreApp: App {
   // register app delegate for Firebase setup
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+  @StateObject var authService = AuthenticationService.shared
 
 
   var body: some Scene {
     WindowGroup {
-      NavigationView {
-        ContentView()
-      }
+        if authService.user != nil {
+            MainView()
+                .environmentObject(authService)
+        } else {
+            ContentView()
+                .environmentObject(authService)
+        }
     }
   }
 }

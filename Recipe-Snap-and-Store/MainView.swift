@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct MainView: View {
+    @ObservedObject var authService = AuthenticationService.shared
+    
     var body: some View {
-        Text("Main View")
+        NavigationView {
+            Text("Welcome to Recipe Snap & Store!")
+                .navigationTitle("Home")
+                .toolbar {
+                    NavigationLink(destination: SettingsView()) {
+                        Image(systemName: "gear")
+                    }
+                }
+        }
     }
 }
 

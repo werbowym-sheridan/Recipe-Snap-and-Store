@@ -22,7 +22,11 @@
 		F8D231612BCB1E9D00D3A3E8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D231602BCB1E9D00D3A3E8 /* SignUpView.swift */; };
 		F8D231632BCB1EAF00D3A3E8 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D231622BCB1EAF00D3A3E8 /* LogInView.swift */; };
 		F8D231652BCB238400D3A3E8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D231642BCB238400D3A3E8 /* MainView.swift */; };
-		F8D231672BCB280000D3A3E8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D231662BCB280000D3A3E8 /* SettingsView.swift */; };
+		F8D231782BCB4D6F00D3A3E8 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D231772BCB4D6F00D3A3E8 /* Recipe.swift */; };
+		F8D2317A2BCB4E1500D3A3E8 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D231792BCB4E1500D3A3E8 /* RecipeDetailView.swift */; };
+		F8D2317C2BCB4FB800D3A3E8 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2317B2BCB4FB800D3A3E8 /* RecipeViewModel.swift */; };
+		F8D2317E2BCB500D00D3A3E8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F8D2317D2BCB500D00D3A3E8 /* FirebaseFirestore */; };
+		F8D231802BCB532100D3A3E8 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F8D2317F2BCB532100D3A3E8 /* FirebaseFirestoreSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +40,9 @@
 		F8D231602BCB1E9D00D3A3E8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		F8D231622BCB1EAF00D3A3E8 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		F8D231642BCB238400D3A3E8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		F8D231662BCB280000D3A3E8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F8D231772BCB4D6F00D3A3E8 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		F8D231792BCB4E1500D3A3E8 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		F8D2317B2BCB4FB800D3A3E8 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,8 @@
 				F8AD8BA62BCB1A8B00AB4BDA /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				F8AD8BAC2BCB1A8B00AB4BDA /* FirebaseAppCheck in Frameworks */,
 				F8AD8BAA2BCB1A8B00AB4BDA /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				F8D2317E2BCB500D00D3A3E8 /* FirebaseFirestore in Frameworks */,
+				F8D231802BCB532100D3A3E8 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +93,9 @@
 				F8D231602BCB1E9D00D3A3E8 /* SignUpView.swift */,
 				F8D231622BCB1EAF00D3A3E8 /* LogInView.swift */,
 				F8D231642BCB238400D3A3E8 /* MainView.swift */,
-				F8D231662BCB280000D3A3E8 /* SettingsView.swift */,
+				F8D231772BCB4D6F00D3A3E8 /* Recipe.swift */,
+				F8D231792BCB4E1500D3A3E8 /* RecipeDetailView.swift */,
+				F8D2317B2BCB4FB800D3A3E8 /* RecipeViewModel.swift */,
 			);
 			path = "Recipe-Snap-and-Store";
 			sourceTree = "<group>";
@@ -128,6 +138,8 @@
 				F8AD8BA92BCB1A8B00AB4BDA /* FirebaseAnalyticsWithoutAdIdSupport */,
 				F8AD8BAB2BCB1A8B00AB4BDA /* FirebaseAppCheck */,
 				F8D2315E2BCB1DA700D3A3E8 /* FirebaseAuth */,
+				F8D2317D2BCB500D00D3A3E8 /* FirebaseFirestore */,
+				F8D2317F2BCB532100D3A3E8 /* FirebaseFirestoreSwift */,
 			);
 			productName = "Recipe-Snap-and-Store";
 			productReference = F8AD8B912BCB19CD00AB4BDA /* Recipe-Snap-and-Store.app */;
@@ -187,13 +199,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8D231672BCB280000D3A3E8 /* SettingsView.swift in Sources */,
+				F8D2317A2BCB4E1500D3A3E8 /* RecipeDetailView.swift in Sources */,
 				F8D231632BCB1EAF00D3A3E8 /* LogInView.swift in Sources */,
 				F8D231652BCB238400D3A3E8 /* MainView.swift in Sources */,
 				F8D231612BCB1E9D00D3A3E8 /* SignUpView.swift in Sources */,
 				F8D2315C2BCB1D3E00D3A3E8 /* AuthenticationService.swift in Sources */,
 				F8AD8B972BCB19CD00AB4BDA /* ContentView.swift in Sources */,
 				F8AD8B952BCB19CD00AB4BDA /* Recipe_Snap_and_StoreApp.swift in Sources */,
+				F8D2317C2BCB4FB800D3A3E8 /* RecipeViewModel.swift in Sources */,
+				F8D231782BCB4D6F00D3A3E8 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +455,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F8AD8BA22BCB1A8B00AB4BDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		F8D2317D2BCB500D00D3A3E8 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8AD8BA22BCB1A8B00AB4BDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		F8D2317F2BCB532100D3A3E8 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8AD8BA22BCB1A8B00AB4BDA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

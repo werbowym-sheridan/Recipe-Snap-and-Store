@@ -21,6 +21,8 @@ struct SignUpView: View {
             }
             
             TextField("Email", text: $email)
+                .keyboardType(.emailAddress)
+                .autocorrectionDisabled()
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .autocapitalization(.none)
                 .padding()

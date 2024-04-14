@@ -23,6 +23,7 @@ struct Recipe_Snap_and_StoreApp: App {
   // register app delegate for Firebase setup
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
   @StateObject var authService = AuthenticationService.shared
+  @StateObject var recipeVM = RecipeViewModel()
 
 
   var body: some Scene {
@@ -30,6 +31,7 @@ struct Recipe_Snap_and_StoreApp: App {
         if authService.user != nil {
             MainView()
                 .environmentObject(authService)
+                .environmentObject(recipeVM)
         } else {
             ContentView()
                 .environmentObject(authService)

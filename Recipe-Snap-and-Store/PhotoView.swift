@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct PhotoView: View {
     @EnvironmentObject var recipeVM: RecipeViewModel
-    @State private var photo = Photo()
+    @Binding var photo: Photo
     var uiImage: UIImage
     var recipe: Recipe
     @Environment(\.dismiss) private var dismiss
@@ -27,6 +28,8 @@ struct PhotoView: View {
                 
                 TextField("Description", text: $photo.description)
                     .textFieldStyle(.roundedBorder)
+                    .disabled(!(Auth.auth().currentUser?.email == photo.poster))
+                    .padding()
                 
                 Text("by: \(photo.poster) on \(photo.postedDate.formatted(date: .numeric, time: .omitted))")
                     .lineLimit(1)
@@ -34,21 +37,30 @@ struct PhotoView: View {
             }
             .padding()
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                        dismiss()
+                if Auth.auth().currentUser?.email == photo.poster {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel") {
+                            dismiss()
+                        }
                     }
-                }
-                ToolbarItem(placement: .automatic){
-                    Button("Save"){
-                        Task {
-                            let success = await recipeVM.saveImage(recipe: recipe, photo: photo, image: uiImage)
-                            if success {
-                                dismiss()
+                    ToolbarItem(placement: .automatic){
+                        Button("Save"){
+                            Task {
+                                let success = await recipeVM.saveImage(recipe: recipe, photo: photo, image: uiImage)
+                                if success {
+                                    dismiss()
+                                }
                             }
                         }
                     }
+                } else {
+                    ToolbarItem(placement: .automatic) {
+                        Button("Done") {
+                            dismiss()
+                        }
+                    }
                 }
+                
             }
                 
         }

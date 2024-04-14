@@ -13,6 +13,7 @@ struct RecipeDetailView: View {
     @ObservedObject var recipeVM = RecipeViewModel()
     @FirestoreQuery(collectionPath: "recipes") var photos: [Photo]
     @State var recipe: Recipe
+    @State var newPhoto = Photo()
     @Environment(\.dismiss) private var dismiss
     @State private var selectedPhoto: PhotosPickerItem?
     @State private var uiImageSelected = UIImage()
@@ -48,6 +49,7 @@ struct RecipeDetailView: View {
                             if let uiImage = UIImage(data: data) {
                                 uiImageSelected = uiImage
                                 print("W bozo, succussefully saved image")
+                                newPhoto = Photo()
                                 if recipe.id != nil {
                                     showPhotoViewSheet.toggle()
                                 }
@@ -96,7 +98,7 @@ struct RecipeDetailView: View {
             }
             .sheet(isPresented: $showPhotoViewSheet){
                 NavigationStack {
-                    PhotoView(uiImage: uiImageSelected, recipe: recipe)
+                    PhotoView(photo: $newPhoto, uiImage: uiImageSelected, recipe: recipe)
                 }
             }
         }

@@ -14,6 +14,9 @@ struct RecipeDetailPhotosScrollView: View {
 //    }
 //    let photos = [FakePhoto(), FakePhoto(), FakePhoto(), FakePhoto()]
     
+    @State private var showPhotoViewerView = false
+    @State private var uiImage = UIImage()
+    @State var selectedPhoto = Photo()
     var photos: [Photo]
     var recipe: Recipe
     
@@ -30,13 +33,23 @@ struct RecipeDetailPhotosScrollView: View {
                             .frame(width: 80, height: 80)
                             .clipped()
                             .cornerRadius(10)
+                            .onTapGesture {
+                                let renderer = ImageRenderer(content: image)
+                                selectedPhoto = photo
+                                uiImage = renderer.uiImage ?? UIImage()
+                                showPhotoViewerView.toggle()
+                            }
                     } placeholder: {
                         ProgressView()
+                            .frame(width: 80, height: 80)
                     }
                 }
             }
         }
         .frame(height: 80)
         .padding(.horizontal, 4)
+        .sheet(isPresented: $showPhotoViewerView) {
+            PhotoView(photo: $selectedPhoto, uiImage: uiImage, recipe: recipe)
+        }
     }
 }

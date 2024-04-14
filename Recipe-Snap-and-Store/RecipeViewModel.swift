@@ -42,7 +42,10 @@ class RecipeViewModel: ObservableObject {
             return false
         }
         
-        let photoName = UUID().uuidString //image file name
+        var photoName = UUID().uuidString //image file name
+        if photo.id != nil {
+            photoName = photo.id!
+        }
         let storage = Storage.storage() //create firebase storage instance
         let storageRef = storage.reference().child("\(recipeID)/\(photoName).jpeg")
         

@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import FirebaseFirestoreSwift
+import PhotosUI
 
 struct RecipeDetailView: View {
     @ObservedObject var recipeVM = RecipeViewModel()
     @State var recipe: Recipe
     @Environment(\.dismiss) private var dismiss
+    @State private var selectedPhoto: PhotosPickerItem?
     
     var body: some View {
         VStack {
@@ -20,13 +23,35 @@ struct RecipeDetailView: View {
                 TextField("Recipe Description", text: $recipe.description)
                     .font(.title2)
             }
+            .disabled(recipe.id == nil ? false : true)
             .textFieldStyle(.roundedBorder)
             .overlay {
                 RoundedRectangle(cornerRadius: 5)
-                    .stroke(.gray.opacity(0.5), lineWidth: 2)
+                    .stroke(.gray.opacity(0.5), lineWidth: recipe.id == nil ? 2 : 0)
             }
             .padding(.horizontal)
             Spacer()
+            PhotosPicker(selection: $selectedPhoto, matching: .images, preferredItemEncoding: .automatic) {
+                Image(systemName: "photo")
+                Text("Photo")
+            }
+            .onChange(of: selectedPhoto) { newValue in
+                Task {
+                    do {
+                        if let data = try await newValue?.loadTransferable(type: Data.self) {
+                            if let uiImage = UIImage(data: data) {
+                                //TODO: this is where i set Image = Image(uiImage: uiImage) or call func to save image
+                                print("W bozo, succussefully saved image")
+                            }
+                        }
+                    } catch {
+                        print("rip bozo, selecting image failed")
+                    }
+                }
+            }
+            .buttonStyle(.borderedProminent)
+            .bold()
+            .tint(.blue)
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(recipe.id == nil)

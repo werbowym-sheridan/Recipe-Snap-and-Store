@@ -26,6 +26,8 @@ struct MainView: View {
                 }
             }
             .listStyle(.plain)
+            .navigationTitle("Recipe Snaps")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Sign Out") {

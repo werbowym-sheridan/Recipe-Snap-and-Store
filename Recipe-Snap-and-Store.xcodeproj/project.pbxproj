@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2A05CDF2BD01D9200E6987A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A05CDE2BD01D9200E6987A /* Line.swift */; };
+		F2A05CE12BD01DD100E6987A /* DividerWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A05CE02BD01DD100E6987A /* DividerWithText.swift */; };
 		F8AD8B952BCB19CD00AB4BDA /* Recipe_Snap_and_StoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AD8B942BCB19CD00AB4BDA /* Recipe_Snap_and_StoreApp.swift */; };
 		F8AD8B972BCB19CD00AB4BDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AD8B962BCB19CD00AB4BDA /* ContentView.swift */; };
 		F8AD8B992BCB19CE00AB4BDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8AD8B982BCB19CE00AB4BDA /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F2A05CDE2BD01D9200E6987A /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		F2A05CE02BD01DD100E6987A /* DividerWithText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerWithText.swift; sourceTree = "<group>"; };
 		F8AD8B912BCB19CD00AB4BDA /* Recipe-Snap-and-Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe-Snap-and-Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8AD8B942BCB19CD00AB4BDA /* Recipe_Snap_and_StoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe_Snap_and_StoreApp.swift; sourceTree = "<group>"; };
 		F8AD8B962BCB19CD00AB4BDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F2A05CDD2BD01D7A00E6987A /* View Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F2A05CDE2BD01D9200E6987A /* Line.swift */,
+				F2A05CE02BD01DD100E6987A /* DividerWithText.swift */,
+			);
+			path = "View Extensions";
+			sourceTree = "<group>";
+		};
 		F8AD8B882BCB19CD00AB4BDA = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +105,7 @@
 		F8AD8B932BCB19CD00AB4BDA /* Recipe-Snap-and-Store */ = {
 			isa = PBXGroup;
 			children = (
+				F2A05CDD2BD01D7A00E6987A /* View Extensions */,
 				F8D231592BCB1B9C00D3A3E8 /* GoogleService-Info.plist */,
 				F8AD8B942BCB19CD00AB4BDA /* Recipe_Snap_and_StoreApp.swift */,
 				F8AD8B962BCB19CD00AB4BDA /* ContentView.swift */,
@@ -218,6 +232,8 @@
 				F8D231612BCB1E9D00D3A3E8 /* SignUpView.swift in Sources */,
 				F8D231822BCB69A800D3A3E8 /* Photo.swift in Sources */,
 				F8D231862BCB6E2B00D3A3E8 /* PhotoView.swift in Sources */,
+				F2A05CDF2BD01D9200E6987A /* Line.swift in Sources */,
+				F2A05CE12BD01DD100E6987A /* DividerWithText.swift in Sources */,
 				F8D2315C2BCB1D3E00D3A3E8 /* AuthenticationService.swift in Sources */,
 				F8AD8B972BCB19CD00AB4BDA /* ContentView.swift in Sources */,
 				F8AD8B952BCB19CD00AB4BDA /* Recipe_Snap_and_StoreApp.swift in Sources */,

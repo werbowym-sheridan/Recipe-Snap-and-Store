@@ -86,6 +86,7 @@ struct ContentView: View {
                             .cornerRadius(30)
                             .shadow(color: .gray, radius: 3, x: 2, y: 2)
                     }
+                    .navigationBarBackButtonHidden(true)
                     .position(x: 250, y: 598)
                     DividerWithText()
                             .padding()
@@ -101,6 +102,7 @@ struct ContentView: View {
                             .cornerRadius(30)
                             .shadow(color: .gray, radius: 3, x: 2, y: 2)
                     }
+                    .navigationBarBackButtonHidden(true)
                     .padding()
                     .position(x: 250, y: 698)
             }
@@ -110,6 +112,7 @@ struct ContentView: View {
                 .padding(.horizontal)
         
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
     

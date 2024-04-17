@@ -24,6 +24,7 @@ struct LogInView: View {
                         .padding()
                         .cornerRadius(30)
                 }
+                .navigationBarBackButtonHidden(true)
                 .position(x: 50, y: 50)
                 Text("Welcome Back")
                     .font(.largeTitle)
@@ -56,7 +57,6 @@ struct LogInView: View {
                         .foregroundColor(.red)
                         .font(.system(size: 10))
                         .position(x: 195, y: 570)
-                    
                 }
                 Text("Password")
                     .position(x: 75, y: 480)
@@ -90,11 +90,9 @@ struct LogInView: View {
                 NavigationLink(destination: MainView(), isActive: $isLoggedin) {
                     EmptyView()
                 }
+                .navigationBarBackButtonHidden(true)
             }
-            .navigationTitle("Log In")
-                
-            }
-         
+        }
     }
 }
 

@@ -372,7 +372,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Recipe-Snap-and-Store/Preview Content\"";
-				DEVELOPMENT_TEAM = ZXSUZ55397;
+				DEVELOPMENT_TEAM = M46W996KF7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -401,7 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Recipe-Snap-and-Store/Preview Content\"";
-				DEVELOPMENT_TEAM = ZXSUZ55397;
+				DEVELOPMENT_TEAM = M46W996KF7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

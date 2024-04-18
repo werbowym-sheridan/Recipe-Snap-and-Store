@@ -22,11 +22,11 @@ struct RecipeDetailView: View {
     var body: some View {
         VStack {
             ZStack{
-                Text("Add a new recipe 🥘")
+                Text("Recipe 🥘")
                     .font(.title)
                     .bold()
                     .position(x: 200, y: 50)
-                Text("Add a new recipe ")
+                Text("Recipe ")
                     .font(.title)
                     .bold()
                     .foregroundStyle(Color("Egg yellow"))
@@ -59,45 +59,49 @@ struct RecipeDetailView: View {
                             .stroke(Color("Dark Indigo"), lineWidth: recipe.id == nil ? 2 : 0)
                     )
                     .position(x: 200, y: 250)
-
             }
             .disabled(recipe.id == nil ? false : true)
             
             RecipeDetailPhotosScrollView(photos: photos, recipe: recipe)
             
-//            PhotosPicker(selection: $selectedPhoto, matching: .images, preferredItemEncoding: .automatic) {
-//                Image(systemName: "photo")
-//                Text("Photo")
-//            }
-//            .onChange(of: selectedPhoto) { newValue in
-//                Task {
-//                    do {
-//                        if let data = try await newValue?.loadTransferable(type: Data.self) {
-//                            if let uiImage = UIImage(data: data) {
-//                                uiImageSelected = uiImage
-//                                print("W bozo, succussefully saved image")
-//                                newPhoto = Photo()
-//                                if recipe.id != nil {
-//                                    showPhotoViewSheet.toggle()
-//                                }
-//                            }
-//                        }
-//                    } catch {
-//                        print("rip bozo, selecting image failed")
-//                    }
-//                }
-//            }
-//            .buttonStyle(.borderedProminent)
-//            .bold()
-//            .tint(.blue)
-//            .onAppear {
-//                if recipe.id != nil {
-//                    $photos.path = "recipes/\(recipe.id ?? "")/photos"
-//                    print ("photos.path: \($photos.path)")
-//                } else {
-//                    print ("rip bozo, no id")
-//                }
-//            }
+            PhotosPicker(selection: $selectedPhoto, matching: .images, preferredItemEncoding: .automatic) {
+                Image(systemName: "photo")
+                Text("Add a photo")
+            }
+            .onChange(of: selectedPhoto) { newValue in
+                Task {
+                    do {
+                        if let data = try await newValue?.loadTransferable(type: Data.self) {
+                            if let uiImage = UIImage(data: data) {
+                                uiImageSelected = uiImage
+                                print("W bozo, succussefully saved image")
+                                newPhoto = Photo()
+                                if recipe.id != nil {
+                                    showPhotoViewSheet.toggle()
+                                }
+                            }
+                        }
+                    } catch {
+                        print("rip bozo, selecting image failed")
+                    }
+                }
+            }
+            .bold()
+            .padding()
+            .foregroundColor(Color.white)
+            .background (
+                RoundedRectangle(cornerRadius: 30).fill(Color("Dark Indigo"))
+                    
+            )
+            .position(x:200, y:10)
+            .onAppear {
+                if recipe.id != nil {
+                    $photos.path = "recipes/\(recipe.id ?? "eRbCINukPBK5ONjYYRuI")/photos"
+                    print ("photos.path: \($photos.path)")
+                } else {
+                    print ("rip bozo, no id")
+                }
+            }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(recipe.id == nil)
             .toolbar {
@@ -119,7 +123,7 @@ struct RecipeDetailView: View {
                             Task {
                                 let success = await recipeVM.saveRecipe(recipe: recipe)
                                 if success {
-                                    $photos.path = "recipes/\(recipe.id ?? "")/photos"
+                                    $photos.path = "recipes/\(recipe.id ?? "eRbCINukPBK5ONjYYRuI")/photos"
                                     showPhotoViewSheet.toggle()
                                 } else {
                                     print ("rip bozo, Failed to save recipe")
@@ -144,7 +148,6 @@ struct RecipeDetailView: View {
             }
             
         }
-        .background(Color("Light egg yellow").edgesIgnoringSafeArea(.all))
+     
     }
 }
-

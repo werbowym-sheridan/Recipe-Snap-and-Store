@@ -51,5 +51,6 @@ struct RecipeDetailPhotosScrollView: View {
         .sheet(isPresented: $showPhotoViewerView) {
             PhotoView(photo: $selectedPhoto, uiImage: uiImage, recipe: recipe)
         }
+        .position(x:220, y: 100)
     }
 }

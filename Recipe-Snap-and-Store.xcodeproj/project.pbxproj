@@ -110,7 +110,6 @@
 				F8AD8B942BCB19CD00AB4BDA /* Recipe_Snap_and_StoreApp.swift */,
 				F8AD8B962BCB19CD00AB4BDA /* ContentView.swift */,
 				F8AD8B982BCB19CE00AB4BDA /* Assets.xcassets */,
-				F8AD8B9A2BCB19CE00AB4BDA /* Preview Content */,
 				F8D2315B2BCB1D3E00D3A3E8 /* AuthenticationService.swift */,
 				F8D231602BCB1E9D00D3A3E8 /* SignUpView.swift */,
 				F8D231622BCB1EAF00D3A3E8 /* LogInView.swift */,
@@ -121,6 +120,7 @@
 				F8D231812BCB69A800D3A3E8 /* Photo.swift */,
 				F8D231852BCB6E2B00D3A3E8 /* PhotoView.swift */,
 				F8D231872BCB745700D3A3E8 /* RecipeDetailPhotosScrollView.swift */,
+				F8AD8B9A2BCB19CE00AB4BDA /* Preview Content */,
 			);
 			path = "Recipe-Snap-and-Store";
 			sourceTree = "<group>";
